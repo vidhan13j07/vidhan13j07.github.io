@@ -1,0 +1,75 @@
+<style type="text/css">
+td
+{
+    padding:0 100px;
+}
+</style>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+<table>
+  <tr>
+    <td><h1></h1> </td>
+    <td><h1>Form with state as input</h1> </td>
+    <td><h1>Form with state as selection</h1> </td>
+    <td><h1></h1> </td>
+  </tr>
+  <tr>
+    <td>
+
+    </td>
+    <td>
+<form name="addr1.1" id="form1" action="https://example.com/" method="post">
+  Name: <input type="text" name="name" placeholder="Name"><br>
+  Address: <input type="text" name="address" placeholder="Address"><br>
+  City: <input type="text" name="city" placeholder="City"><br>
+  State: <input type="text" name="state" placeholder="State"> <br>
+  Zip: <input name="zip" id="form_zip" placeholder="Zip"> <br>
+  Country: <input name="country" id="form_country" placeholder="Country"> <br>
+  Email: <input name="email" id="form_email" placeholder="Email"> <br>
+  <div id="form_phone_container" style="display: none;">
+    Phone: <input name="phone" id="form_phone" placeholder="Phone"> <br>
+  </div>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit" id="profile_submit">
+</form>
+    </td>
+    <td>
+<form name="addr1.1" id="form1" action="https://example.com/" method="post">
+  Name: <input type="text" name="name" placeholder="Name"><br>
+  Address: <input type="text" name="address" placeholder="Address"><br>
+  City: <input type="text" name="city" placeholder="City"><br>
+  State: <select name="state">
+    <option value="New York">New York</option>
+    <option value="UP">UP</option>
+    <option value="Catalunya">Catalunya</option>
+    <option value="Cairo Governorate">Cairo Governorate</option>
+    <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+    <option value="Bavaria">Bavaria</option>
+    <option value="CA">CA</option>
+    <option value="Québec">Québec</option>
+  </select> <br>
+  Zip: <input name="zip" id="form_zip" placeholder="Zip"> <br>
+  Country: <input name="country" id="form_country" placeholder="Country"> <br>
+  Email: <input name="email" id="form_email" placeholder="Email"> <br>
+  <div id="form_phone_container" style="display: none;">
+    Phone: <input name="phone" id="form_phone" placeholder="Phone"> <br>
+  </div>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit" id="profile_submit">
+</form>
+    </td>
+    <td>
+    </td>
+  </tr>
+  </body>
+</html>
