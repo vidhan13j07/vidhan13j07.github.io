@@ -1,0 +1,154 @@
+<style type="text/css">
+td
+{
+    padding:0 35px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Save Prompt Test Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+    <script>
+      // Create a basic Profile
+      var FillBaseProfile = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Pablo Picasso';
+        form['organization'].value = 'Hall of Fame';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+      }
+      
+    var FillBaseProfile2 = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Thomas Anderson';
+        form['organization'].value = '';
+        form['address'].value = '42 SomeStreet';
+        form['city'].value = 'Capitcal City';
+        form['state'].value = 'CA';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+      }
+      
+      
+      var AddPhoneAndEmail = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Pablo Picasso';
+        form['organization'].value = 'Hall of Fame';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+        form['phone'].value = '0123456789';
+        form['email'].value = 'picasso@google.com';
+      }
+      
+      // This profile has a mergable addition to the name.
+      var FillNameUpdate = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Pablo Diego Picasso';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+      }
+      
+      // This profile has a mergable addition to the city
+      var FillCityUpdate = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Pablo Picasso';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton DC';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+      }
+      
+      // This profile has a mergable addition to the city
+      var FillStructuredProfile = function() {
+        var form = document.forms['sform'];
+        form['first_name'].value = 'Pablo Diego';
+        form['middle_name'].value = '';
+        form['last_name'].value = 'Picasso';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton DC';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+      }
+      
+     var FullUpdate = function() {
+        var form = document.forms['uform'];
+        form['name'].value = 'Pablo Diego Picasso';
+        form['organization'].value = 'Hall of Fame';
+        form['address'].value = '123 SomeStreet';
+        form['city'].value = 'Washigton DC';
+        form['state'].value = 'DC';
+        form['zip'].value = '20033';
+        form['country'].value = 'US';
+        form['phone'].value = '0123456789';
+        form['email'].value = 'picasso@google.com';
+      }
+      
+  </script>
+  </head>
+  <body>
+
+<h1>Standard address form</h1>
+
+<form id="uform" action=''>
+  <label for="name">Name: </label>
+  <input size=25 type="text" id="name" name="name"><br>
+  <label for="organization">Organization</label>
+  <input size=25 type="text" id="organization" name="organization"><br>
+  <label for="address">Address:</label>
+  <input size=25 type="text" id="address" name="address"><br>
+  <label for="city">City:</label>
+  <input size=25 type="text" id="city" name="city"><br>
+  <label for="state">State:</label>
+  <input size=25 type="text" id="state" name="state"><br>
+  <label for="zip">ZIP:</label>
+  <input size=25 type="text" id="zip" name="zip"><br>
+  <label for="country">Country:</label>
+  <input size=25 type="text" id="country" name="country"><br>
+  <label for="email">Email:</label>
+  <input size=25 type="text" id="email" name="email"><br>
+  <label for="phone">Phone:</label>
+  <input size=25 type="text" id="phone" name="phone"><br>
+  <input type="submit" value="Submit" id="profile_submit">  
+</form>
+
+    
+<button type="button" onclick="FillBaseProfile()">Fill Base Profile</button>
+<br>
+    <button type="button" onclick="AddPhoneAndEmail()">Add Phone And Mail</button>
+<br>
+
+<button type="button" onclick="FillNameUpdate()">Name Update</button>
+<br>
+<button type="button" onclick="FillCityUpdate()">City Update</button>
+<br>
+<button type="button" onclick="FullUpdate()">Full Update</button>
+<br>
+<br>
+<button type="button" onclick="FillBaseProfile2()">Fill Second Base Profile</button>     
+
+      <br><br>
+
+</body>
+</html>
