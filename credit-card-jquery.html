@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Autofill Smoke Test</title>
+    <script>
+
+      /* These are not valid credit card numbers!!!! */
+      /* They pass the Luhn check but that's it.     */
+      var CCFillFormSimpsons = function() {
+	  var form = document.forms['cc1'];
+	  form['name'].value = 'Homer Simpson';
+	  form['CCNo'].value = '4408-0412-3456-7893';
+	  form['CCExpiresMonth'].value = '06';
+	  form['CCExpiresYear'].value = '2023';
+      }
+    
+    </script>
+    <style>
+      .fork {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+</p><hr>
+  <h3>Credit Card autofill</h3>
+
+<form name="cc1.1" id="cc1" action="">
+  Name on card: <input autofocus="" type="text" name="name" id="credit_card_name"><br>
+  Credit card number: <input type="text" name="CCNo" id="credit_card_number"><br>
+  Expiry Date: <select name="CCExpiresMonth">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+  </select>
+  /
+<select name="CCExpiresYear">
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+    <option value="2024">2024</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option>
+    <option value="2031">2031</option>
+    <option value="2032">2032</option>
+    <option value="2033">2033</option>
+    <option value="2034">2034</option>
+    <option value="2035">2035</option>
+    <option value="2036">2036</option>
+    <option value="2037">2037</option>	
+  </select>
+  <br>
+  CVC: <input name="cvc">
+<br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit" id="credit_card_submit">
+</form>
+
+<p>
+
+<button type="button" onclick="CCFillFormSimpsons()">CC Fill Form (Simpsons)</button>
+<br>
+
+</body></html>
