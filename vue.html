@@ -25,12 +25,11 @@
   </head>
   <body>
 
-<div id="form" @keyup.enter="trigger">
+<form method="post" action="www.example.com" id="form" @keyup.enter="trigger">
   <input id="username" v-model="username" type="text">
   <input id="password" v-model="password" type="password">
-</div>
-
-
+  <button>Save</button>
+</form>
 
 </body>
 </html>
