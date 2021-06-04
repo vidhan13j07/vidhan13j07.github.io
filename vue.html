@@ -1,0 +1,48 @@
+<style type="text/css">
+td
+{
+    padding:0 35px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Save Prompt Test Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    
+    <script>
+      new Vue({
+  el: '#form',
+  data: {
+    username: '',
+    password: ''
+  },
+  methods: {
+    trigger() {
+       console.log("triggered!")
+    }
+  }
+});
+      
+  </script>
+  </head>
+  <body>
+
+<div id="form" @keyup.enter="trigger">
+  <input id="username" v-model="username" type="text">
+  <input id="password" v-model="password" type="password">
+</div>
+
+
+
+</body>
+</html>
